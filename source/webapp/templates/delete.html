@@ -3,9 +3,6 @@
 {% block title %}Delete Guestbook{% endblock %}
 
 {% block menu %}
-
-    <li><a href="{% url 'guestbook_view' task.pk %}">View</a></li>
-
 {% endblock %}
 
 {% block content %}
@@ -18,7 +15,7 @@
 
         <p><input type="submit" value="Confirm"></p>
 
-        <p><a href="{% url "index"%}">Cancel</a></p>
+        <p><a href="{% url "index" %}">Cancel</a></p>
 
     </form>
 

@@ -4,7 +4,7 @@ from webapp.models import Guestbook
 
 
 def index_view(request, *args, **kwargs):
-    guestbooks = Guestbook.objects.all()
+    guestbooks = Guestbook.objects.filter(status='active').order_by('-creation_date')
     return render(request, 'index.html', context={
         'guestbooks': guestbooks
     })
@@ -28,13 +28,11 @@ def guestbook_create_view(request, *args, **kwargs):
             guestbook = Guestbook.objects.create(
                 post_author_name=form.cleaned_data['post_author_name'],
                 email=form.cleaned_data['email'],
-                date=form.cleaned_data['date'],
                 text=form.cleaned_data['text'],
-                status=form.cleaned_data['status']
 
             )
 
-            return redirect('task_view', pk=guestbook.pk)
+            return redirect('guestbook_view', pk=guestbook.pk)
 
         else:
 
@@ -50,8 +48,6 @@ def guestbook_update_view(request, pk):
             'post_author_name': guestbook.post_author_name,
             'text': guestbook.text,
             'email': guestbook.email,
-            'status': guestbook.status,
-            'date': guestbook.date
         })
         return render(request, 'update.html', context={'guestbook': guestbook, 'form': form})
 
@@ -59,8 +55,6 @@ def guestbook_update_view(request, pk):
         form = GuestbookForm(data=request.POST)
         if form.is_valid():
             guestbook.post_author_name = form.cleaned_data['post_author_name']
-            guestbook.date = form.cleaned_data['date']
-            guestbook.status = form.cleaned_data['status']
             guestbook.text = form.cleaned_data['text']
             guestbook.save()
             return redirect('guestbook_view', pk=guestbook.pk)
