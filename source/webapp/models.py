@@ -3,7 +3,7 @@ from django.db import models
 status_choices = [("active", "Активно"), ("blocked", "Заблокировано")]
 
 
-class (models.Model):
+class Guestbook(models.Model):
     post_author_name = models.CharField(max_length=200, null=False, blank=False, verbose_name='Описание')
     text = models.TextField(max_length=3000, null=True, blank=True, verbose_name='Текст')
     email = models.EmailField(max_length=254, null=True, blank=True, verbose_name='Email')
