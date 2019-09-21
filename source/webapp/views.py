@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from webapp.forms import GuestbookForm
+from webapp.forms import *
 from webapp.models import Guestbook
 
 
 def index_view(request, *args, **kwargs):
     guestbooks = Guestbook.objects.filter(status='active').order_by('-creation_date')
+    form = SeacrhForm()
     return render(request, 'index.html', context={
-        'guestbooks': guestbooks
+        'guestbooks': guestbooks,
+        'form': form
     })
 
 
@@ -70,8 +72,11 @@ def guestbook_delete_view(request, pk):
         return redirect('index')
 
 
-# def guestbook_seacrh(request):
-#     if request.method == 'GET':
-#          = request.GET.get('description')
-#         guestbook = Guestbook.objects.filter(description__icontains=description)
-#         return redirect('')
+def guestbook_seacrh(request):
+    author_name = request.GET.get('search')
+    guestbooks = Guestbook.objects.filter(post_author_name__contains=author_name).filter(status='active')
+    return render(request, 'index.html', context={
+        'guestbooks': guestbooks
+    })
+
+
