@@ -4,14 +4,14 @@ from webapp.models import Guestbook
 
 
 def index_view(request, *args, **kwargs):
-    guestbook = Guestbook.objects.all()
+    guestbooks = Guestbook.objects.all()
     return render(request, 'index.html', context={
-        'guestbook': guestbook
+        'guestbooks': guestbooks
     })
 
 
 def guestbook_view(request, pk):
-    guestbook = get_object_or_404Guestbook, pk=pk)
+    guestbook = get_object_or_404(Guestbook, pk=pk)
     return render(request, 'guestbook.html', context={'guestbook': guestbook})
 
 
@@ -27,6 +27,7 @@ def guestbook_create_view(request, *args, **kwargs):
         if form.is_valid():
             guestbook = Guestbook.objects.create(
                 post_author_name=form.cleaned_data['post_author_name'],
+                email=form.cleaned_data['email'],
                 date=form.cleaned_data['date'],
                 text=form.cleaned_data['text'],
                 status=form.cleaned_data['status']
@@ -48,6 +49,7 @@ def guestbook_update_view(request, pk):
         form = GuestbookForm(data={
             'post_author_name': guestbook.post_author_name,
             'text': guestbook.text,
+            'email': guestbook.email,
             'status': guestbook.status,
             'date': guestbook.date
         })

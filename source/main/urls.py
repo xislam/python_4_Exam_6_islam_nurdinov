@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view, name='index'),
+    path('status/<int:pk>/', guestbook_view, name='guestbook_view'),
+    path('status/add/', guestbook_create_view, name='guestbook_add'),
+    path('guestbook/<int:pk>/edit/', guestbook_update_view, name='guestbook_update'),
+    path('guestbook/<int:pk>/delete/', guestbook_delete_view, name='guestbook_delete'),
+    # path('task/<str:description>/search/', guestbook_seacrh, name='guestbook_seacrh')
 ]
+

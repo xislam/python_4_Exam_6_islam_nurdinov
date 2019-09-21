@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <li><a href="{% url 'guestbook_add' %}">Add Guestbook</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Guestbook:</h1>
+    <hr/>
+    {% for guestbook in guestbooks %}
+        <h2>{{ guestbook.post_author_name }}</h2>
+        <div>{{ guestbook.date }}</div>
+        <p><a href="{% url 'guestbook_update' guestbook.pk %}">Edit</a></p>
+        <p><a href="{% url 'guestbook_delete' guestbook.pk %}">Delete</a></p>
+        <hr/>
+    {% endfor %}
+{% endblock %}

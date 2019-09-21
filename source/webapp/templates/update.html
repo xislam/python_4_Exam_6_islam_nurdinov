@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block menu %}
+
+    <li><a href="{% url 'guestbook_view' guestbook.pk %}">View</a></li>
+
+{% endblock %}
+
+{% block title %}Update Task{% endblock %}
+
+{% block content %}
+
+    <h1>Update GuestBook</h1>
+
+    <form method="POST" action="{% url "guestbook_update" guestbook.pk %}">
+
+        {% csrf_token %}
+  {% include 'partial/guestbook_form.html' with button_text="Update" %}
+    </form>
+
+{% endblock %}
+
