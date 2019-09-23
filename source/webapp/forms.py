@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import widgets
 
-from webapp.models import status_choices
+
 
 
 class GuestbookForm(forms.Form):

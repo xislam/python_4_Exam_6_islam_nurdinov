@@ -1,0 +1,72 @@
+[
+{
+  "model": "webapp.guestbook",
+  "pk": 1,
+  "fields": {
+    "post_author_name": "islalm",
+    "text": "asfsj dlfijaerljghearg nao;erg dofjds;f; dsf oadifhdifvl dsjfvnadpfjv ad;fjvn dsfjkvnds;jfvn ;dfjv dsf n djf; dfv nd;fk asd",
+    "email": "nurdinovislam4@gmail.com",
+    "date": "2019-01-01",
+    "creation_date": "2019-09-09T00:00:00Z",
+    "change_date": "2019-09-21T10:07:09.689Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.guestbook",
+  "pk": 2,
+  "fields": {
+    "post_author_name": "islalm",
+    "text": "erwb rerbwebrewrbw erwr",
+    "email": "nurdinovislam4@gmail.com",
+    "date": null,
+    "creation_date": "2019-09-21T08:00:09.260Z",
+    "change_date": "2019-09-21T08:00:09.260Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.guestbook",
+  "pk": 9,
+  "fields": {
+    "post_author_name": "\u0438\u0441\u043b\u0430\u043c",
+    "text": "\u0412\u0414\u0412",
+    "email": "nurdinovislam4@gmail.com",
+    "date": null,
+    "creation_date": "2019-09-23T07:17:08.901Z",
+    "change_date": "2019-09-23T11:12:01.662Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.guestbook",
+  "pk": 12,
+  "fields": {
+    "post_author_name": "\u042b\u0412\u043c \u042b\u0412\u043c \u042b\u0412\u043c\u042b \u0412\u043c",
+    "text": "\u044b\u0432\u043c \u044b\u0432\u0430\u043c \u044b\u0430\u0438 \u044b\u0430\u0438 \u0432\u0430\u0438 \u0432\u0430 \u0438",
+    "email": "nurdinovislam4@gmail.com",
+    "date": null,
+    "creation_date": "2019-09-23T11:12:20.996Z",
+    "change_date": "2019-09-23T11:12:20.996Z",
+    "status": "active"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$YDewymqBiPTB$BuKBq+CGT0tYjIakeyxiLyOUyAvuAWrX28MVq6x5L9Q=",
+    "last_login": "2019-09-21T07:38:29.122Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "nurdinovislam4@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-21T05:35:22.065Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

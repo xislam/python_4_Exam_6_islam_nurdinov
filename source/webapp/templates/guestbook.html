@@ -11,9 +11,7 @@
 {% block title %}{{ guestbook.title }}{% endblock %}
 
 {% block content %}
-    <h1>Guestbook:{{ guestbook.get_status_display }}</h1>
-    <p>Описание:{{ guestbook.taxt}} </p>
-    <p>Статус: {{ guestbook.get_status_display }}</p>
-    <div class="pre">{{ guestbook.text }}</div>
-    <div>{{ guestbook.date }}</div>
+    <h1>Автор:{{ guestbook.post_author_name }}</h1>
+    <p>Описание:{{ guestbook.text}} </p>
+    <p>Статус: {{ guestbook.get_status_display }}</p
 {% endblock %}
